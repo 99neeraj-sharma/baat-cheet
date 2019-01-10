@@ -61,7 +61,8 @@ function showRoom(name){
     $("#" + room_id + "-msg").css("display", "inherit");
     if($("#" + room_id + "-msg").attr("data-joined") == 0){
         $(".error").css("display","inherit");
-        $(".error").html('<span id="error">You havent joined this room yet. <input type="button" onclick="joinRoom(\'' + name.id + '\')" value="Join" id="joinBtn"/> to see the conversation.</span>');
+        $(".error").html('<span id="error">You havent joined this room yet.<br/> <input type="button" onclick="joinRoom(\'' + name.id + '\')" value="Join" id="joinBtn"/> <br/> to see the conversation.</span>');
+        $(".error").css({"text-align":"center","padding-top":"20%"});
         $("#" + room_id + "-msg,.write").hide();
     }else {
         $(".error").hide();

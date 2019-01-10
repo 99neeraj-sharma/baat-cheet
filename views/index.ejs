@@ -7,8 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= title %></title>
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/emojify.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/emojify.css"> -->
+    <!-- <link href="../node_modules/emojionearea/dist/emojionearea.css"> -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.css">
+    <script type="text/javascript" src="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.js"></script>
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script src="/client.js"></script>
 </head>
@@ -51,20 +54,13 @@
         <div class="write" id="write">
             <a href="javascript:;" class="write-link attach"></a>
             <input type="text" id="textarea" data-active="lobby"/>
-            <a href="#" class="write-link smiley">
-                <ul id="emobox">
-                    <li><img src="/images/emoji/smile.png" id="smile" onclick="writeEmoji(this)"/"></li>
-                    <li><img src="/images/emoji/laughing.png" id="laughing" onclick="writeEmoji(this)" /></li>
-                    <li><img src="/images/emoji/grin.png" id="grin" onclick="writeEmoji(this)"/></li>
-                    <li><img src="/images/emoji/joy.png" id="joy" onclick="writeEmoji(this)"/></li>
-                    <li><img src="/images/emoji/stuck_out_tongue_winking_eye.png" id="tongue" onclick="writeEmoji(this)"/></li>
-                    <li><img src="/images/emoji/thumbsup.png" id="thumbsup" onclick="writeEmoji(this)"/></li>
-                    <li><img src="/images/emoji/sunglasses.png" id="sunglasses" onclick="writeEmoji(this)"/></li>
-                    <li><img src="/images/emoji/heart.png" id="heart" onclick="writeEmoji(this)"/></li>
-                    <li><img src="/images/emoji/kissing_heart.png" id="kissing" onclick="writeEmoji(this)"/></li>
-                    <li><img src="/images/emoji/wink.png" id="wink" onclick="writeEmoji(this)"/></li>
-                </ul>
-            </a>
+            <!-- <a href="#" class="write-link smiley"> -->
+                    <script type="text/javascript">
+                      $(document).ready(function() {
+                        $("#textarea").emojioneArea();
+                      });
+                    </script>
+            <!-- </a> -->
             <a href="javascript:;" class="write-link send"></a>
         </div>
         
@@ -82,9 +78,9 @@
 </div>
 
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
 <script src='/notify.min.js'></script>
 <script src='/script.js'></script>
-<script src='/emojify.js'></script>
+<!-- <script src='/emojify.js'></script> -->
 </body>
 </html>
